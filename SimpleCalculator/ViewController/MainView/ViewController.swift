@@ -22,7 +22,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         service = CalcService(displayView: self)
-        view.backgroundColor = .systemRed
+        view.backgroundColor = AppColors.background
         
         configureAppearance()
     }
@@ -73,14 +73,12 @@ private extension ViewController {
     func setupMainVStack() {
         mainVStack.axis = .vertical // направление добавления элементов
         mainVStack.frame = CGRect(x: 0, y: 60, width: Constants.screenWidth, height: Constants.screenHeight-60) // stack window
-        mainVStack.backgroundColor = .systemGreen
         
         self.view.addSubview(mainVStack) // показать на экране
     }
     
     func setupDisplayView() {
         displayView.frame = CGRect(x: 0, y: 0, width: Constants.screenWidth, height: Constants.screenHeight-(82*5)-60-30) // окно для текста
-        displayView.backgroundColor = .lightGray
         
         display.frame = CGRect(x: 15, y: 15, width: displayView.frame.width - 30, height: displayView.frame.height - 15) // описание textview
         display.textAlignment = .right
@@ -88,7 +86,6 @@ private extension ViewController {
         display.text = "0"
         display.textColor = .white
         display.font = UIFont.boldSystemFont(ofSize: 80)
-        display.backgroundColor = .gray
         
         displayView.addSubview(display)
         mainVStack.addSubview(displayView)
@@ -99,15 +96,23 @@ private extension ViewController {
         
         let acButton = createButton(order: 0, title: "AC", tag: 15)
         acButton.addTarget(self, action: #selector(buttonPressed(_:)), for: .touchUpInside)
+        acButton.backgroundColor = AppColors.topButtons
+        acButton.setTitleColor(.black, for: .normal)
         
         let changeSignButton = createButton(order: 1, title: "+/-", tag: 16)
         changeSignButton.addTarget(self, action: #selector(buttonPressed(_:)), for: .touchUpInside)
+        changeSignButton.backgroundColor = AppColors.topButtons
+        changeSignButton.setTitleColor(.black, for: .normal)
         
         let percentButton = createButton(order: 2, title: "%", tag: 17)
         percentButton.addTarget(self, action: #selector(buttonPressed(_:)), for: .touchUpInside)
+        percentButton.backgroundColor = AppColors.topButtons
+        percentButton.setTitleColor(.black, for: .normal)
         
         let divButton = createButton(order: 3, title: "/", tag: 18)
         divButton.addTarget(self, action: #selector(buttonPressed(_:)), for: .touchUpInside)
+        divButton.backgroundColor = AppColors.actions
+        divButton.setTitleColor(.black, for: .normal)
         
         line1.addSubview(acButton)
         line1.addSubview(changeSignButton)
@@ -130,6 +135,8 @@ private extension ViewController {
         
         let multButton = createButton(order: 3, title: "*", tag: 14)
         multButton.addTarget(self, action: #selector(buttonPressed(_:)), for: .touchUpInside)
+        multButton.backgroundColor = AppColors.actions
+        multButton.setTitleColor(.black, for: .normal)
         
         line2.addSubview(sevenButton)
         line2.addSubview(eightButton)
@@ -152,6 +159,8 @@ private extension ViewController {
         
         let subsButton = createButton(order: 3, title: "-", tag: 13)
         subsButton.addTarget(self, action: #selector(buttonPressed(_:)), for: .touchUpInside)
+        subsButton.backgroundColor = AppColors.actions
+        subsButton.setTitleColor(.black, for: .normal)
         
         line3.addSubview(fourButton)
         line3.addSubview(fiveButton)
@@ -174,6 +183,8 @@ private extension ViewController {
         
         let plusButton = createButton(order: 3, title: "+", tag: 12)
         plusButton.addTarget(self, action: #selector(buttonPressed(_:)), for: .touchUpInside)
+        plusButton.backgroundColor = AppColors.actions
+        plusButton.setTitleColor(.black, for: .normal)
         
         line4.addSubview(oneButton)
         line4.addSubview(twoButton)
@@ -194,6 +205,8 @@ private extension ViewController {
         
         let equalButton = createButton(order: 3, title: "=", tag: 11)
         equalButton.addTarget(self, action: #selector(buttonPressed(_:)), for: .touchUpInside)
+        equalButton.backgroundColor = AppColors.actions
+        equalButton.setTitleColor(.black, for: .normal)
         
         line5.addSubview(zeroButton)
         line5.addSubview(dotButton)
@@ -213,7 +226,7 @@ private extension ViewController {
         let button = UIButton(frame: CGRect(x: (0+Int(Constants.screenWidth)/4*order+2), y: 0, width: Int(Constants.screenWidth/4-2), height: 80))
         
         button.setTitle(title, for: .normal)
-        button.backgroundColor = .blue
+        button.backgroundColor = AppColors.buttons
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 30)
         button.setTitleColor(.white, for: .normal)
         button.tag = tag

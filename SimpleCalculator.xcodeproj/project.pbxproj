@@ -15,6 +15,7 @@
 		773ABB9229A520750089AE6B /* CalcService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 773ABB9129A520750089AE6B /* CalcService.swift */; };
 		773ABB9429A520F10089AE6B /* Operations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 773ABB9329A520F10089AE6B /* Operations.swift */; };
 		773ABB9829A525990089AE6B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 773ABB9729A525990089AE6B /* Constants.swift */; };
+		77ED53D929A676B400492320 /* AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77ED53D829A676B400492320 /* AppColors.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		773ABB9129A520750089AE6B /* CalcService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalcService.swift; sourceTree = "<group>"; };
 		773ABB9329A520F10089AE6B /* Operations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Operations.swift; sourceTree = "<group>"; };
 		773ABB9729A525990089AE6B /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		77ED53D829A676B400492320 /* AppColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColors.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +89,7 @@
 				773ABB9129A520750089AE6B /* CalcService.swift */,
 				773ABB9329A520F10089AE6B /* Operations.swift */,
 				773ABB9729A525990089AE6B /* Constants.swift */,
+				77ED53D829A676B400492320 /* AppColors.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -187,6 +190,7 @@
 				773ABB7D29A51A850089AE6B /* ViewController.swift in Sources */,
 				773ABB7929A51A850089AE6B /* AppDelegate.swift in Sources */,
 				773ABB7B29A51A850089AE6B /* SceneDelegate.swift in Sources */,
+				77ED53D929A676B400492320 /* AppColors.swift in Sources */,
 				773ABB9429A520F10089AE6B /* Operations.swift in Sources */,
 				773ABB9829A525990089AE6B /* Constants.swift in Sources */,
 			);
