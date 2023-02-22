@@ -50,42 +50,51 @@ private extension ViewController {
     }
     
     func setupDisplayView() {
-        displayView.frame = CGRect(x: 0, y: 0, width: Constants.screenWidth, height: Constants.screenHeight - (82 * 5) - 60 - 30)
+        displayView.frame = CGRect(x: 0, y: 0, width: Constants.screenWidth, height: Constants.screenHeight-(82*5)-60-30) // окно для текста
         displayView.backgroundColor = .lightGray
         
-        display.frame = CGRect(x: 0, y: 0, width: displayView.frame.width, height: displayView.frame.height)
+        display.frame = CGRect(x: 15, y: 15, width: displayView.frame.width - 30, height: displayView.frame.height - 15) // описание textview
+        display.textAlignment = .right
+        display.contentVerticalAlignment = .bottom
+        display.text = "0"
+        display.textColor = .white
+        display.font = UIFont.boldSystemFont(ofSize: 80)
+        display.backgroundColor = .gray
+        
+        displayView.addSubview(display)
+        mainVStack.addSubview(displayView)
     }
     
     func setupButtons() {
-        let line1 = createHStack(yPosition: 0)
+        let line1 = createHStack(yPosition: Int(displayView.frame.height) + 0)
         line1.addSubview(createButton(order: 0, title: "0", tag: 0))
         line1.addSubview(createButton(order: 1, title: "1", tag: 1))
         line1.addSubview(createButton(order: 2, title: "2", tag: 2))
         line1.addSubview(createButton(order: 3, title: "3", tag: 3))
         mainVStack.addSubview(line1)
         
-        let line2 = createHStack(yPosition: 80 + 2)
+        let line2 = createHStack(yPosition: Int(displayView.frame.height) + 80 + 2)
         line2.addSubview(createButton(order: 0, title: "4", tag: 4))
         line2.addSubview(createButton(order: 1, title: "5", tag: 5))
         line2.addSubview(createButton(order: 2, title: "6", tag: 6))
         line2.addSubview(createButton(order: 3, title: "7", tag: 7))
         mainVStack.addSubview(line2)
         
-        let line3 = createHStack(yPosition: 80 + 80 + 4)
+        let line3 = createHStack(yPosition: Int(displayView.frame.height) + 80 + 80 + 4)
         line3.addSubview(createButton(order: 0, title: "8", tag: 8))
         line3.addSubview(createButton(order: 1, title: "9", tag: 9))
         line3.addSubview(createButton(order: 2, title: "10", tag: 10))
         line3.addSubview(createButton(order: 3, title: "11", tag: 11))
         mainVStack.addSubview(line3)
         
-        let line4 = createHStack(yPosition: 80 + 80 + 80 + 6)
+        let line4 = createHStack(yPosition: Int(displayView.frame.height) + 80 + 80 + 80 + 6)
         line4.addSubview(createButton(order: 0, title: "12", tag: 12))
         line4.addSubview(createButton(order: 1, title: "13", tag: 13))
         line4.addSubview(createButton(order: 2, title: "14", tag: 14))
         line4.addSubview(createButton(order: 3, title: "15", tag: 15))
         mainVStack.addSubview(line4)
         
-        let line5 = createHStack(yPosition: 80 + 80 + 80 + 80 + 8)
+        let line5 = createHStack(yPosition: Int(displayView.frame.height) + 80 + 80 + 80 + 80 + 8)
         
         let zeroButton = createButton(order: 0, title: "16", tag: 16) // большая кнопка ноль
         zeroButton.frame = CGRect(x: 2, y: 0, width: (Int(Constants.screenWidth)/4)*2-2, height: 80)
