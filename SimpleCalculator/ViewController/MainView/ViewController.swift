@@ -86,6 +86,7 @@ private extension ViewController {
         display.text = "0"
         display.textColor = .white
         display.font = UIFont.boldSystemFont(ofSize: 80)
+        display.isUserInteractionEnabled = false
         
         displayView.addSubview(display)
         mainVStack.addSubview(displayView)
@@ -229,6 +230,7 @@ private extension ViewController {
         button.backgroundColor = AppColors.buttons
         button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 30)
         button.setTitleColor(.white, for: .normal)
+        button.layer.cornerRadius = 0.3 * button.bounds.size.width
         button.tag = tag
         
         return button
